@@ -8,7 +8,7 @@ jieba.load_userdict('dict/user.dict')
 # 简体&繁体字典 这个不用修改,所以我让他当用户字典加载了
 #jieba.set_dictionary('~/桌面/ji/dict/dict.txt.big')
 # './a.txt'为想打开的文件
-file_object = open('./源文件.txt','r')
+file_object = open('./源文件.txt','r',encoding="utf-8")
 ## 定义一个 list
 L =list()
 ## 获取带词性的词对象（没学过py不知道得到的是什么）
@@ -27,7 +27,7 @@ for word, flag in words:
 ## 计算出现次数
 getObj = Counter(L)
 ## 写到./getObj.json文件里
-f = open('./getObj.json', 'w')
+f = open('./getObj.json', 'w',encoding="utf-8")
 f.write(str(getObj).replace("Counter(","").replace(")","").replace("'",'"'))
 f.close()
 file_object.close()
